@@ -1,0 +1,23 @@
+#gl-canvas {
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+}
+
+#playbutton {
+    width: 80px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    margin-top: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+}
+
+#info {
+    font-size: larger;
+    margin-top: 5px;
+    text-align: center;
+}

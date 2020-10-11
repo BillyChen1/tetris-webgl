@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Tetris</title>
+        <link rel='stylesheet' href='style.css' />
+        <script type="text/javascript" src="./Common/webgl-utils.js"></script>
+        <script type="text/javascript" src="./Common/initShaders.js"></script>
+        <script type="text/javascript" src="./Common/MV.js"></script>
+        <script src='js/tetris.js'></script>
+        <script src='js/controller.js'></script>
+        <script src='js/render.js'></script>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+        <script id="vertex-shader" type="x-shader/x-vertex">
+            attribute vec4 vPosition;
+            attribute vec4 vColor;
+            varying vec4 fColor;
+            void
+            main()
+            {
+                fColor = vColor;
+                gl_Position = vPosition;
+                gl_PointSize = 2.0;
+            }
+            </script>
+        
+        
+            <script id="fragment-shader" type="x-shader/x-fragment">
+            precision mediump float;
+            varying vec4 fColor;
+            void
+            main()
+            {
+                gl_FragColor = fColor;
+                //gl_FragColor = vec4(0,1,2,0);
+            }
+            </script>
+    </head>
+    <body>
+        <canvas id="gl-canvas" width='300' height='600'></canvas>
+        <button id="playbutton" onclick="playButtonClicked();">开始</button>
+        <div id="info">
+            分数：<span id="score">0</span>
+            <div id="instruction">W:旋转 A:左移 D:右移 S:下降</div>
+        </div>
+    </body>
+</html>
