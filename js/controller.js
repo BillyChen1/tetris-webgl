@@ -1,5 +1,5 @@
 document.onkeypress = function(e) {
-    var keyCode = e.key;
+    var keyCode = e.key.toLowerCase();
     var keys = {
         "w": "rotate",
         "a": "left",

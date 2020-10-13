@@ -95,6 +95,10 @@ function freeze() {
 
 // returns rotates the rotated shape 'current' perpendicularly anticlockwise
 function rotate( current ) {
+    //如果当前形状是正方形，则不能旋转，直接返回原形状
+    if (current[0][0]!=0&&current[0][1]!=0&&current[1][0]!=0&&current[1][1]!=0) {
+        return current;
+    }
     var newCurrent = [];
     for ( var y = 0; y < 4; ++y ) {
         newCurrent[ y ] = [];
